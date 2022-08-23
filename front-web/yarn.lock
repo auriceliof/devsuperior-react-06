@@ -2011,6 +2011,14 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-flatpickr@^3.8.7":
+  version "3.8.7"
+  resolved "https://registry.yarnpkg.com/@types/react-flatpickr/-/react-flatpickr-3.8.7.tgz#dffd457b623c643d17e1693af50fc08c667d6855"
+  integrity sha512-sIRN1WxcVjPjlYdqhDqWjdznFIb21Z1ab0prETuzW6j/xpOXMDCBI6/xtxTgaWF0hhKTqO7U1RRbaxbjyS3e5w==
+  dependencies:
+    "@types/react" "*"
+    flatpickr "^4.0.6"
+
 "@types/react@*", "@types/react@^18.0.17":
   version "18.0.17"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.17.tgz#4583d9c322d67efe4b39a935d223edcc7050ccf4"
@@ -4381,6 +4389,11 @@ flat-cache@^3.0.4:
   dependencies:
     flatted "^3.1.0"
     rimraf "^3.0.2"
+
+flatpickr@^4.0.6, flatpickr@^4.6.2:
+  version "4.6.13"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.6.13.tgz#8a029548187fd6e0d670908471e43abe9ad18d94"
+  integrity sha512-97PMG/aywoYpB4IvbvUJi0RQi8vearvU0oov1WW3k0WZPBMrTQVqekSX5CjSG/M4Q3i6A/0FKXC7RyAoAUUSPw==
 
 flatted@^3.1.0:
   version "3.2.7"
@@ -7132,7 +7145,7 @@ prompts@^2.0.1, prompts@^2.4.2:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.8.1:
+prop-types@^15.5.10, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -7269,6 +7282,14 @@ react-error-overlay@^6.0.11:
   version "6.0.11"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.11.tgz#92835de5841c5cf08ba00ddd2d677b6d17ff9adb"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
+
+react-flatpickr@^3.10.13:
+  version "3.10.13"
+  resolved "https://registry.yarnpkg.com/react-flatpickr/-/react-flatpickr-3.10.13.tgz#5b9d8f35f84e43f342fb0f0334b78a8dcd7d67c4"
+  integrity sha512-4m+K1K8jhvRFI8J/AHmQfA5hLALzhebEtEK8mLevXjX24MV3u502crzBn+EGFIBOfNUtrL5PId9FsGwgtuz/og==
+  dependencies:
+    flatpickr "^4.6.2"
+    prop-types "^15.5.10"
 
 react-is@^16.13.1:
   version "16.13.1"
