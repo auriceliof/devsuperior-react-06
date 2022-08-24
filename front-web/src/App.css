@@ -1,3 +1,9 @@
 .app-container {
   padding: 0 55px;
 }
+
+.sales-overview-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
