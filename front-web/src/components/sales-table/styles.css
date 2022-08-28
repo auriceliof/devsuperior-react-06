@@ -1,0 +1,13 @@
+.sales-table-container {
+  margin-bottom: 50px;
+  padding: 30px 35px;
+}
+
+.sales-table-title {
+  font-size: 18px;
+  color: var(--light-color);
+}
+
+.sales-table {
+  width: 100%;
+}
