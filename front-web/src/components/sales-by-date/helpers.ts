@@ -52,9 +52,15 @@ export const chartOptions = {
   }
 } as ApexOptions;
 
-export const buildChartSeries = (SalesByDate: SalesByDate[] = []) => {
-  return SalesByDate.map(({ date, sum }) => ({
+export const buildChartSeries = (salesByDate: SalesByDate[] = []) => {
+  return salesByDate.map(({ date, sum }) => ({
     x: date,
     y: sum
   }));
+};
+
+export const sumSalesByDate = (salesByDate: SalesByDate[] = []) => {
+  return salesByDate.reduce((previousValue, currentValue) => {
+    return previousValue + currentValue.sum;
+  }, 0);
 };
