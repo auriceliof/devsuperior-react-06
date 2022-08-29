@@ -2,7 +2,7 @@ import './styles.css';
 
 function SalesTable() {
   return (
-    <div className="sales-table-container">
+    <div className="sales-table-container base-card">
       <h3 className="sales-table-title">Vendas recentes</h3>
       <table className="sales-table">
         <thead>
@@ -17,6 +17,42 @@ function SalesTable() {
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <td>#341</td>
+            <td>07/11/1994</td>
+            <td>Feminino</td>
+            <td>Roupas de acessório</td>
+            <td>Uberlândia</td>
+            <td>Crédito</td>
+            <td>R$ 540.000,00</td>
+          </tr>
+          <tr>
+            <td>#341</td>
+            <td>07/11/1994</td>
+            <td>Feminino</td>
+            <td>Roupas de acessório</td>
+            <td>Uberlândia</td>
+            <td>Crédito</td>
+            <td>R$ 540.000,00</td>
+          </tr>
+          <tr>
+            <td>#341</td>
+            <td>07/11/1994</td>
+            <td>Feminino</td>
+            <td>Roupas de acessório</td>
+            <td>Uberlândia</td>
+            <td>Crédito</td>
+            <td>R$ 540.000,00</td>
+          </tr>
+          <tr>
+            <td>#341</td>
+            <td>07/11/1994</td>
+            <td>Feminino</td>
+            <td>Roupas de acessório</td>
+            <td>Uberlândia</td>
+            <td>Crédito</td>
+            <td>R$ 540.000,00</td>
+          </tr>
           <tr>
             <td>#341</td>
             <td>07/11/1994</td>
