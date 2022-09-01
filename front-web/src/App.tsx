@@ -27,7 +27,7 @@ function App() {
         setSalesByStore(newSalesByStore);
       })
       .catch(() => {
-        console.error('Error to fatch sales by date');
+        console.error('Error to fatch sales by store');
       });
   }, [params]);
 
@@ -39,7 +39,7 @@ function App() {
         setSalesByPaymentMethod(newSalesByPaymentMethod);
       })
       .catch(() => {
-        console.error('Error to fatch sales by date');
+        console.error('Error to fatch sales by payment method');
       });
   }, [params]);
 
@@ -64,7 +64,7 @@ function App() {
             series={salesByPaymentMethod?.series}
           />
         </div>
-        <SalesTable />
+        <SalesTable filterData={filterData} />
       </div>
     </>
   );
