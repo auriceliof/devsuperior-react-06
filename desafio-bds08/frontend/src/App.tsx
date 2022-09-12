@@ -11,8 +11,8 @@ function App() {
         <Filter />
         <div className="app-piechartcard-container">
           <PieChartCard
-            name=""
-            labels={['Araguari', 'Ituiutaba', 'Uberaba']}
+            name="  "
+            labels={['Feminino', 'Masculino', 'Outro']}
             series={[20, 50, 30]}
           />
         </div>
