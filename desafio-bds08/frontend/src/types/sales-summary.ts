@@ -1,5 +1,5 @@
 export type SalesSummary = {
-  sum?: number;
+  sum: number;
   min: number;
   max: number;
   avg: number;
