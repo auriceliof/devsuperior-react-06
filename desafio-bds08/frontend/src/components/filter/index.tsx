@@ -1,18 +1,33 @@
+import { useEffect, useState } from 'react';
 import Select from 'react-select';
+import { Stores } from '../../types/all-stores';
+import { makeRequest } from '../../utils/request';
 import './styles.css';
 
 function Filter() {
-  const options = [
-    { value: 'Araguari', label: 'Araguari' },
-    { value: 'Ituiutaba', label: 'Ituiutaba' },
-    { value: 'Uberlândia', label: 'Uberlândia' },
-  ];
+  const [selectStores, setSelectStores] = useState<Stores[]>([]);
+
+  useEffect(() => {
+    makeRequest
+      .get<Stores[]>('/stores')
+      .then((response) => {
+        setSelectStores(response.data);
+      })
+      .catch(() => {
+        console.error('Error to fatch Summary');
+      });
+  }, []);
 
   return (
     <div className="filter-container base-card">
       <form action="" className="filter-form">
         <div className="filter-input">
-          <Select options={options} />
+          <Select
+            options={selectStores}
+            classNamePrefix="filter-select"
+            getOptionLabel={(stores: Stores) => stores.name}
+            getOptionValue={(stores: Stores) => String(stores.id)}
+          />
         </div>
       </form>
     </div>
