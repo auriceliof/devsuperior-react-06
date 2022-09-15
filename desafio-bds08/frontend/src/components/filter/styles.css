@@ -5,8 +5,11 @@
   padding: 0 15px;
 }
 
-.filter-input {
+.filter-form{
   flex: 1;
+}
+
+.css-1s2u09g-control {
   font-size: 16px;
   height: 40px;
   background-color: var(--primary-color);

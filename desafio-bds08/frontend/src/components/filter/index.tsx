@@ -1,14 +1,20 @@
+import Select from 'react-select';
 import './styles.css';
 
 function Filter() {
+  const options = [
+    { value: 'Araguari', label: 'Araguari' },
+    { value: 'Ituiutaba', label: 'Ituiutaba' },
+    { value: 'Uberlândia', label: 'Uberlândia' },
+  ];
+
   return (
     <div className="filter-container base-card">
-      <select className="filter-input">
-        <option value="">Selecione uma Loja</option>
-        <option value="Araguari">Araguari</option>
-        <option value="Ituiutaba">Ituiutaba</option>
-        <option value="Uberaba">Uberaba</option>
-      </select>
+      <form action="" className="filter-form">
+        <div className="filter-input">
+          <Select options={options} />
+        </div>
+      </form>
     </div>
   );
 }
