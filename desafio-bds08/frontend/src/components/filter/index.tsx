@@ -25,6 +25,8 @@ function Filter() {
           <Select
             options={selectStores}
             classNamePrefix="filter-select"
+            placeholder="Selecione um loja"
+            isClearable
             getOptionLabel={(stores: Stores) => stores.name}
             getOptionValue={(stores: Stores) => String(stores.id)}
           />
