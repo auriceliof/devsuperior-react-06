@@ -29,7 +29,6 @@ function Filter({ onFilterChange }: Props) {
       stores: getValues('stores'),
     };
     onFilterChange(obj);
-    console.log(obj);
   };
 
   useEffect(() => {
