@@ -29,14 +29,17 @@ function Home() {
   };
 
   useEffect(() => {
-    makeRequest
-      .get<SalesSummary>(`/sales/summary?storeId=${StoreId.filterData.stores?.id}`)
-      .then((response) => {
+    if (StoreId.filterData.stores !== null) {
+      makeRequest
+        .get(`/sales/summary?storeId=${StoreId.filterData.stores?.id}`)
+        .then((response) => {
+          setSummary(response.data);
+        });
+    } else {
+      makeRequest.get('/sales/summary?storeId=0').then((response) => {
         setSummary(response.data);
-      })
-      .catch(() => {
-        console.error('Error to fatch Summary');
       });
+    }
   }, [StoreId]);
 
   return (
