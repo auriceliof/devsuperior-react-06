@@ -13,25 +13,25 @@ const initialSummary = {
   count: 0,
 };
 
-type StoreId = {
+type FilterParams = {
   filterData: FilterData;
 };
 
 function Home() {
   const [summary, setSummary] = useState<SalesSummary>(initialSummary);
 
-  const [StoreId, setStoreId] = useState<StoreId>({
+  const [filterParams, setFilterParams] = useState<FilterParams>({
     filterData: { stores: null },
   });
 
   const handleSubmitFilter = (filter: FilterData) => {
-    setStoreId({ filterData: filter });
+    setFilterParams({ filterData: filter });
   };
 
   useEffect(() => {
-    if (StoreId.filterData.stores !== null) {
+    if (filterParams.filterData.stores !== null) {
       makeRequest
-        .get(`/sales/summary?storeId=${StoreId.filterData.stores?.id}`)
+        .get(`/sales/summary?storeId=${filterParams.filterData.stores?.id}`)
         .then((response) => {
           setSummary(response.data);
         });
@@ -40,14 +40,14 @@ function Home() {
         setSummary(response.data);
       });
     }
-  }, [StoreId]);
+  }, [filterParams]);
 
   return (
     <div className="home-container">
       <Filter onFilterChange={handleSubmitFilter} />
       <div className="home-piechartcard-container">
         <PieChartCard
-          name="  "
+          name=""
           labels={['Feminino', 'Masculino', 'Outro']}
           series={[20, 50, 30]}
           summary={summary.sum}
