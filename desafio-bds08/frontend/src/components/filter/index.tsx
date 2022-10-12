@@ -3,10 +3,12 @@ import { useEffect, useState } from 'react';
 import { Stores } from '../../types/all-stores';
 import { makeRequest } from '../../utils/request';
 import { Controller, useForm } from 'react-hook-form';
+import { SalesByGender } from '../../types/sales-by-gender';
 import './styles.css';
 
-export type FilterData = {
+type FilterData = {
   stores: Stores | null;
+  gender: SalesByGender | null;
 };
 
 type Props = {
@@ -27,6 +29,7 @@ function Filter({ onFilterChange }: Props) {
 
     const obj: FilterData = {
       stores: getValues('stores'),
+      gender: getValues('gender'),
     };
     onFilterChange(obj);
   };

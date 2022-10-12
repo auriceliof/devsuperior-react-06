@@ -4,13 +4,13 @@ import ReactApexChart from 'react-apexcharts';
 import './styles.css';
 
 type Props = {
-  labels: string[];
+  labels?: string[];
   name: string;
-  series: number[];
+  series?: number[];
   summary: number;
 };
 
-function PieChartCard({ labels, name, series, summary }: Props) {
+function PieChartCard({ labels = [], name, series = [], summary }: Props) {
   return (
     <div className="pie-chart-card base-card">
       <h1 className="pie-chart-card-value">{formatPrice(summary)}</h1>
