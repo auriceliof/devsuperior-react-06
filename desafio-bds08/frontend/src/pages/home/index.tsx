@@ -2,11 +2,11 @@ import Filter from '../../components/filter';
 import PieChartCard from '../../components/pie-chart-card';
 import { useEffect, useState } from 'react';
 import { SalesSummary } from '../../types/sales-summary';
-import { buildFilterParams, makeRequest } from '../../utils/request';
+import { makeRequest } from '../../utils/request';
 import { PieChartConfig } from '../../types/pie-chart';
 import { SalesByGender } from '../../types/sales-by-gender';
-import { buildSalesByGender } from './helpers';
 import { FilterData } from '../../types/filter';
+import { buildSalesByGender } from './helpers';
 import './styles.css';
 
 const initialSummary = {
@@ -62,17 +62,30 @@ function Home() {
   }, [filterParams]);
 
   useEffect(() => {
-    makeRequest
-      .get<SalesByGender[]>('/sales/by-gender?storeId=0')
-      .then((response) => {
-        const newSalesByGender = buildSalesByGender(response.data);
-        setSalesByGender(newSalesByGender);
-        console.log(newSalesByGender);
-      })
-      .catch(() => {
-        console.error('Error to fatch sales by Gender');
-      });
-  }, []);
+    if (filterParams.filterData.stores !== null) {
+      makeRequest
+        .get<SalesByGender[]>(`/sales/by-gender?storeId=${filterParams.filterData.stores?.id}`)
+        .then((response) => {
+          const newSalesByGender = buildSalesByGender(response.data);
+          setSalesByGender(newSalesByGender);
+          console.log(newSalesByGender);
+        })
+        .catch(() => {
+          console.error('Error to fatch sales by Gender');
+        });
+    } else {
+      makeRequest
+        .get<SalesByGender[]>('/sales/by-gender?storeId=0')
+        .then((response) => {
+          const newSalesByGender = buildSalesByGender(response.data);
+          setSalesByGender(newSalesByGender);
+          console.log(newSalesByGender);
+        })
+        .catch(() => {
+          console.error('Error to fatch sales by Gender');
+        });
+    }
+  }, [filterParams]);
 
   return (
     <div className="home-container">
