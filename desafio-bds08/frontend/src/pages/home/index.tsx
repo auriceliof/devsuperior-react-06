@@ -43,7 +43,6 @@ function Home() {
         .get(`/sales/summary?storeId=${filterParams.filterData.stores?.id}`)
         .then((response) => {
           setSummary(response.data);
-          console.log(response.data);
         })
         .catch(() => {
           console.error('Error to fatch Home');
@@ -53,7 +52,6 @@ function Home() {
         .get('/sales/summary?storeId=0')
         .then((response) => {
           setSummary(response.data);
-          console.log(response.data);
         })
         .catch(() => {
           console.error('Error to fatch Home');
@@ -68,7 +66,6 @@ function Home() {
         .then((response) => {
           const newSalesByGender = buildSalesByGender(response.data);
           setSalesByGender(newSalesByGender);
-          console.log(newSalesByGender);
         })
         .catch(() => {
           console.error('Error to fatch sales by Gender');
@@ -79,7 +76,6 @@ function Home() {
         .then((response) => {
           const newSalesByGender = buildSalesByGender(response.data);
           setSalesByGender(newSalesByGender);
-          console.log(newSalesByGender);
         })
         .catch(() => {
           console.error('Error to fatch sales by Gender');
@@ -93,7 +89,9 @@ function Home() {
       <div className="home-piechartcard-container">
         <PieChartCard
           name=""
-          labels={salesByGender?.labels}
+          labels={
+            salesByGender?.labels ? ['Feminino', 'Masculino', 'Outro'] : salesByGender?.labels
+          }
           series={salesByGender?.series}
           summary={summary.sum}
         />
