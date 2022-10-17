@@ -5,3 +5,9 @@
 .home-piechartcard-container {
   margin: 10px 0;
 }
+
+@media (min-width: 576px) {
+  .home-container {
+    padding: 40px;
+  }
+}

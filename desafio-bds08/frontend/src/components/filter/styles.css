@@ -5,16 +5,43 @@
   padding: 0 15px;
 }
 
-.filter-form{
+.filter-form {
   flex: 1;
 }
 
 .css-1s2u09g-control {
   font-size: 16px;
-  height: 40px;
+  height: 50px;
   background-color: var(--primary-color);
   color: var(--grey-color);
   border: 1px solid var(--grey-color);
   border-radius: 4px;
   padding: 0 12px;
+}
+
+@media (min-width: 576px) {
+  .filter-form {
+    flex: none;
+  }
+
+  .css-1s2u09g-control {
+    width: 270px;
+  }
+
+  .filter-container {
+    margin-bottom: 40px;
+    padding: 0 40px;
+  }
+}
+
+@media (min-width: 992px) {
+  .filter-container {
+    padding: 0 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .filter-container {
+    padding: 0 100px;
+  }
 }

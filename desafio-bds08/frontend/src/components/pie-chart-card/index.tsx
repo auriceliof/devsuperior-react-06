@@ -13,8 +13,10 @@ type Props = {
 function PieChartCard({ labels = [], name, series = [], summary }: Props) {
   return (
     <div className="pie-chart-card base-card">
-      <h1 className="pie-chart-card-value">{formatPrice(summary)}</h1>
-      <span className="pie-chart-card-subtitle">Total de vendas</span>
+      <div className="pie-chart-card-content">
+        <h1 className="pie-chart-card-value">{formatPrice(summary)}</h1>
+        <span className="pie-chart-card-subtitle">Total de vendas</span>
+      </div>
 
       <div className="pie-chart-card-apex-chart">
         <ReactApexChart
